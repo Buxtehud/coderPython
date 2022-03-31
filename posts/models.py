@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Posts(models.Model):
@@ -6,11 +7,11 @@ class Posts(models.Model):
     title = models.CharField(max_length=40, unique=True)
     post_author = models.ForeignKey('Authors', on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
+    content = RichTextField(blank=True, null=True)
 
 
 class Authors(models.Model):
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=40, primary_key=True)
     email = models.EmailField(unique=True)
 
 
@@ -19,3 +20,4 @@ class Comments(models.Model):
     name = models.CharField(max_length=40)
     email = models.EmailField()
     comment_date = models.DateTimeField(auto_now_add=True)
+    content = models.TextField()

@@ -1,0 +1,31 @@
+{% extends 'posts/main.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section class="container-destacado">
+        <h2>DESTACADO</h2>
+        <div class="post-destacado">
+            <div class="title-destacado">
+                <h3>{{ destacado.title }}</h3>
+                <p class="date-destacado">{{ destacado.date }}</p>
+            </div>
+            <div class="content-destacado">
+                <p>{{ destacado.content }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest">
+        <h4>Últimos posts</h4>
+        {% for post in allposts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.date }}</p>
+            <p>{{ post.content }}</p>
+            <a href="#">Más...</a>
+        </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}
