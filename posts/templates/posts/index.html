@@ -11,18 +11,19 @@
                 <p class="date-destacado">{{ destacado.date }}</p>
             </div>
             <div class="content-destacado">
-                <p>{{ destacado.content }}</p>
+                <p>{{ destacado.content|safe }}</p>
+                <a href="#">Más...</a>
             </div>
         </div>
     </section>
 
     <section class="latest">
-        <h4>Últimos posts</h4>
+        <h2 class="post-latest">ÚLTIMOS POSTS</h2>
         {% for post in allposts %}
-        <div>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.date }}</p>
-            <p>{{ post.content }}</p>
+        <div class="posts">
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p class="post-date">{{ post.date }}</p>
+            <p class="post-content">{{ post.content|safe }}</p>
             <a href="#">Más...</a>
         </div>
         {% endfor %}

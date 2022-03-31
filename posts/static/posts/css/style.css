@@ -1,5 +1,5 @@
 *{
-    font-size: 10px;
+    font-size: 13px;
     margin: 0;
     padding: 0;
 }
@@ -97,8 +97,9 @@ h1{
      margin: 20px 0;
  }
 
- .date-destacado{
+ .date-destacado, .post-date{
      text-align: center;
+     font-size: 1.2rem;
      margin-bottom: 20px;
  }
 
@@ -108,4 +109,24 @@ h1{
      align-items: center;
      justify-content: center;
      background-color: #CCCCCC;
+ }
+
+ .latest{
+     margin:35px;
+ }
+
+ .post-latest{
+     text-align: center;
+ }
+
+ h4{
+     text-align: center;
+     font-size: 1.4rem;
+ }
+
+ .posts{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
  }
